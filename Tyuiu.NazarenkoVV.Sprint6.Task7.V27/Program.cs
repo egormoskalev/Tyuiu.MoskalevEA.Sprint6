@@ -1,4 +1,6 @@
-namespace Tyuiu.MoskalevEA.Sprint6.Task0.V20
+using Tyuiu.MokslaevEA.Sprint6.Task7.V27;
+
+namespace Tyuiu.MoskalevEA.Sprint6.Task7.V27
 {
     internal static class Program
     {
@@ -11,7 +13,7 @@ namespace Tyuiu.MoskalevEA.Sprint6.Task0.V20
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormMain());
+            Application.Run(new Form1());
         }
     }
 }
