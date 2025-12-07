@@ -8,23 +8,34 @@ namespace Tyuiu.MoskalevEA.Sprint6.Task6.V10.Lib
         {
             string resStr = "";
 
-            using (StreamReader reader = new StreamReader(path))
+            using (StreamReader sr = new StreamReader(path))
             {
                 string line;
-                while ((line = reader.ReadLine()) != null)
+                while ((line = sr.ReadLine()) != null)
                 {
-                    string[] mas = line.Split(' ');
-                    for (int i = 0; i < mas.Length; i++)
+                    if (line.Contains("w"))
                     {
-                        if (mas[i].Contains("w") || mas[i].Contains("W"))
-                        {
-                            resStr += mas[i] + " ";
-                        }
-
+                        resStr = resStr + " " + line;
                     }
                 }
             }
-            return resStr.Trim();
+            string[] FinalResult = resStr.Split(' ');
+            resStr = "";
+            for (int i = 0; i < FinalResult.Length; i++)
+            {
+                if (FinalResult[i].Contains("w"))
+                {
+                    if (resStr == "")
+                    {
+                        resStr = FinalResult[i];
+                    }
+                    else
+                    {
+                        resStr = resStr + " " + FinalResult[i];
+                    }
+                }
+            }
+            return resStr;
         }
     }
 }
